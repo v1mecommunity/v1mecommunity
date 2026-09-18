@@ -1,0 +1,1308 @@
+/* =========================
+   V1ME COMMUNITY
+   MAIN STYLES
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --bg: #08090d;
+    --bg-secondary: #0d0f15;
+    --card: #11131a;
+    --card-hover: #161923;
+
+    --text: #ffffff;
+    --text-secondary: #969aa8;
+    --text-dark: #686c79;
+
+    --accent: #7c3cff;
+    --accent-light: #9c6bff;
+
+    --border: rgba(255, 255, 255, 0.08);
+
+    --green: #35e58b;
+    --red: #ff4d67;
+
+    --container: 1200px;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+
+    min-height: 100vh;
+
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(var(--container), calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    height: 78px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(8, 9, 13, 0.88);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+
+    min-width: 125px;
+}
+
+.logo span {
+    font-size: 22px;
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+.logo small {
+    margin-top: 4px;
+
+    color: var(--text-secondary);
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.nav a {
+    position: relative;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.nav a:hover {
+    color: white;
+}
+
+.nav a.active {
+    color: white;
+}
+
+.nav a.active::after {
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -28px;
+
+    height: 2px;
+
+    background: var(--accent);
+
+    box-shadow: 0 0 12px var(--accent);
+}
+
+
+/* =========================
+   DISCORD BUTTON
+========================= */
+
+.discord-button {
+    padding: 10px 18px;
+
+    border: 1px solid rgba(124, 60, 255, 0.5);
+
+    background: rgba(124, 60, 255, 0.1);
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.discord-button:hover {
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 25px rgba(124, 60, 255, 0.25);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(124, 60, 255, 0.15),
+            transparent 35%
+        );
+}
+
+.hero::before {
+    content: '';
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -200px;
+    top: 80px;
+
+    border-radius: 50%;
+
+    background: rgba(124, 60, 255, 0.08);
+
+    filter: blur(100px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+/* =========================
+   HERO TEXT
+========================= */
+
+.status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+
+    padding: 7px 12px;
+
+    border: 1px solid rgba(53, 229, 139, 0.2);
+
+    border-radius: 30px;
+
+    background: rgba(53, 229, 139, 0.05);
+
+    color: var(--green);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(58px, 8vw, 105px);
+
+    line-height: 0.85;
+
+    font-weight: 900;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
+
+.hero-text p {
+    color: var(--text-secondary);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0 22px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.button.primary {
+    background: var(--accent);
+
+    box-shadow:
+        0 8px 30px rgba(124, 60, 255, 0.25);
+}
+
+.button.primary:hover {
+    background: var(--accent-light);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(124, 60, 255, 0.4);
+}
+
+.button.secondary {
+    border: 1px solid var(--border);
+
+    background: rgba(255, 255, 255, 0.03);
+
+    color: var(--text-secondary);
+}
+
+.button.secondary:hover {
+    color: white;
+
+    border-color: rgba(255, 255, 255, 0.2);
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================
+   HERO CARD
+========================= */
+
+.hero-card {
+    padding: 28px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.06),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35);
+
+    transition: 0.3s ease;
+}
+
+.hero-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(124, 60, 255, 0.35);
+}
+
+.card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+
+    color: var(--text-secondary);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.live {
+    color: var(--green);
+}
+
+.hero-card h2 {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+    letter-spacing: -1px;
+}
+
+.game {
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+    margin-bottom: 35px;
+}
+
+.prize {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.prize small {
+    color: var(--text-secondary);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.prize strong {
+    font-size: 26px;
+}
+
+.progress-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 22px;
+    margin-bottom: 9px;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+}
+
+.progress {
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.progress-bar {
+    width: 50%;
+    height: 100%;
+
+    background: var(--accent);
+
+    border-radius: 20px;
+
+    box-shadow: 0 0 12px rgba(124, 60, 255, 0.6);
+}
+
+.card-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 25px;
+
+    height: 44px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.card-button:hover {
+    color: white;
+
+    border-color: var(--accent);
+
+    background: rgba(124, 60, 255, 0.1);
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    background: var(--bg-secondary);
+}
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-right: 1px solid var(--border);
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.stat span {
+    color: var(--text-secondary);
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-header {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+}
+
+.section-label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--accent-light);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-header h2 {
+    font-size: 34px;
+
+    letter-spacing: -1.5px;
+}
+
+.view-all {
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.view-all:hover {
+    color: white;
+}
+
+
+/* =========================
+   TOURNAMENT GRID
+========================= */
+
+.tournament-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.tournament-card {
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: var(--card);
+
+    transition: 0.3s ease;
+}
+
+.tournament-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(124, 60, 255, 0.35);
+
+    background: var(--card-hover);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   TOURNAMENT IMAGE
+========================= */
+
+.tournament-image {
+    position: relative;
+
+    height: 145px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #151027,
+            #28165b
+        );
+
+    overflow: hidden;
+}
+
+.tournament-image::after {
+    content: 'V1ME';
+
+    position: absolute;
+
+    right: -10px;
+    bottom: -30px;
+
+    font-size: 100px;
+
+    font-weight: 900;
+
+    color: rgba(255, 255, 255, 0.025);
+
+    transform: rotate(-10deg);
+}
+
+.tournament-image.second {
+    background:
+        linear-gradient(
+            135deg,
+            #111a25,
+            #142c3d
+        );
+}
+
+.tournament-image.third {
+    background:
+        linear-gradient(
+            135deg,
+            #241216,
+            #3b1725
+        );
+}
+
+.game-tag {
+    position: absolute;
+
+    left: 15px;
+    top: 15px;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.status-tag {
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+}
+
+.live-tag {
+    background: rgba(53, 229, 139, 0.12);
+
+    color: var(--green);
+
+    border: 1px solid rgba(53, 229, 139, 0.2);
+}
+
+.upcoming-tag {
+    background: rgba(255, 255, 255, 0.08);
+
+    color: var(--text-secondary);
+}
+
+
+/* =========================
+   TOURNAMENT CONTENT
+========================= */
+
+.tournament-content {
+    padding: 22px;
+}
+
+.tournament-content h3 {
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+.tournament-content > p {
+    color: var(--text-secondary);
+
+    font-size: 11px;
+
+    margin-bottom: 22px;
+}
+
+.tournament-info {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    padding: 15px 0;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.tournament-info div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.tournament-info small {
+    color: var(--text-dark);
+
+    font-size: 8px;
+}
+
+.tournament-info strong {
+    font-size: 11px;
+}
+
+.small-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+
+    margin-top: 15px;
+
+    border-radius: 7px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.small-button:hover {
+    color: white;
+
+    background: var(--accent);
+}
+
+
+/* =========================
+   MATCHES
+========================= */
+
+.matches-section {
+    padding-top: 20px;
+}
+
+.matches {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.match {
+    display: grid;
+
+    grid-template-columns: 90px 1fr 100px 1fr 100px;
+
+    align-items: center;
+
+    gap: 20px;
+
+    min-height: 70px;
+
+    padding: 10px 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: var(--card);
+
+    transition: 0.2s ease;
+}
+
+.match:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+
+    background: var(--card-hover);
+}
+
+.match-status {
+    color: var(--text-dark);
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.live-status {
+    color: var(--green);
+}
+
+.team {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 11px;
+}
+
+.team:nth-child(4) {
+    justify-content: flex-end;
+}
+
+.team-logo {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 7px;
+
+    background: rgba(124, 60, 255, 0.12);
+
+    color: var(--accent-light);
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.score {
+    text-align: center;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.match-map {
+    text-align: right;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    padding: 40px 0 100px;
+}
+
+.cta-box {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 70px 40px;
+
+    border: 1px solid rgba(124, 60, 255, 0.2);
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(124, 60, 255, 0.14),
+            transparent 60%
+        ),
+        var(--card);
+}
+
+.cta-box h2 {
+    margin-bottom: 12px;
+
+    font-size: 38px;
+
+    letter-spacing: -1.5px;
+}
+
+.cta-box p {
+    max-width: 500px;
+
+    margin: 0 auto 28px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    border-top: 1px solid var(--border);
+
+    background: var(--bg-secondary);
+}
+
+.footer-content {
+    min-height: 100px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer p {
+    color: var(--text-dark);
+
+    font-size: 9px;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+
+    font-size: 9px;
+
+    transition: 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #292b35;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+    background: var(--accent);
+
+    color: white;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+.hero-text {
+    animation: fadeUp 0.7s ease forwards;
+}
+
+.hero-card {
+    animation: fadeUp 0.9s ease forwards;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .nav {
+        gap: 15px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 70px 0;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-card {
+        max-width: 600px;
+    }
+
+    .tournament-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .header {
+        height: auto;
+    }
+
+    .header-content {
+        padding: 18px 0;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .logo {
+        margin-right: auto;
+    }
+
+    .nav {
+        order: 3;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding-bottom: 5px;
+    }
+
+    .nav a {
+        white-space: nowrap;
+    }
+
+    .nav a.active::after {
+        bottom: -7px;
+    }
+
+    .discord-button {
+        margin-left: auto;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+
+        letter-spacing: -3px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .tournament-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .match {
+        grid-template-columns: 65px 1fr 70px;
+
+        gap: 10px;
+    }
+
+    .match .team:nth-child(4) {
+        display: none;
+    }
+
+    .match-map {
+        display: none;
+    }
+
+    .cta-box {
+        padding: 50px 20px;
+    }
+
+    .cta-box h2 {
+        font-size: 28px;
+    }
+
+    .footer-content {
+        padding: 30px 0;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .container {
+        width: min(100% - 24px, var(--container));
+    }
+
+    .hero {
+        padding-top: 20px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+    }
+
+    .hero-card {
+        padding: 20px;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+    .match {
+        padding: 10px;
+    }
+
+}

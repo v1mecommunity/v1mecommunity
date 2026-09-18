@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Реєстрація — V1ME Community</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        body {
+            background: #0b0b10;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .register-page {
+            max-width: 800px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #888;
+            margin-bottom: 35px;
+        }
+
+        .form-box {
+            background: #15151d;
+            border: 1px solid #292936;
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px;
+            background: #0e0e14;
+            border: 1px solid #30303d;
+            border-radius: 9px;
+            color: white;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #8b5cf6;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #8b5cf6;
+            color: white;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .submit-button:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+        }
+
+        .success {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #12351f;
+            border: 1px solid #22c55e;
+            color: #4ade80;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 25px;
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="register-page">
+
+    <h1 class="title">
+        Реєстрація на турнір
+    </h1>
+
+    <p class="subtitle">
+        Зареєструй свою команду для участі у V1ME Community
+    </p>
+
+
+    <div class="form-box">
+
+        <form id="registerForm">
+
+
+            <!-- ТУРНІР -->
+
+            <div class="form-group">
+
+                <label>
+                    Турнір
+                </label>
+
+                <select id="tournament" required>
+
+                    <option value="">
+                        Обери турнір
+                    </option>
+
+                    <option value="V1ME CUP #1">
+                        V1ME CUP #1 — 500₴
+                    </option>
+
+                    <option value="V1ME NIGHT CUP">
+                        V1ME NIGHT CUP — 300₴
+                    </option>
+
+                    <option value="V1ME OPEN #2">
+                        V1ME OPEN #2 — 1000₴
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- НАЗВА КОМАНДИ -->
+
+            <div class="form-group">
+
+                <label>
+                    Назва команди
+                </label>
+
+                <input
+                    type="text"
+                    id="team"
+                    placeholder="Наприклад: SavageHawks"
+                    required
+                >
+
+            </div>
+
+
+            <!-- DISCORD -->
+
+            <div class="form-group">
+
+                <label>
+                    Discord капітана
+                </label>
+
+                <input
+                    type="text"
+                    id="discord"
+                    placeholder="Наприклад: v1me"
+                    required
+                >
+
+            </div>
+
+
+            <!-- КАПІТАН -->
+
+            <div class="form-group">
+
+                <label>
+                    Нікнейм капітана
+                </label>
+
+                <input
+                    type="text"
+                    id="captain"
+                    placeholder="Нікнейм у CS2"
+                    required
+                >
+
+            </div>
+
+
+            <!-- ГРАВЦІ -->
+
+            <div class="form-group">
+
+                <label>
+                    Гравці команди
+                </label>
+
+                <textarea
+                    id="players"
+                    placeholder="5 посилань на фейсит"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- STEAM -->
+
+            <div class="form-group">
+
+                <label>
+                    Steam профіль капітана
+                </label>
+
+                <input
+                    type="url"
+                    id="steam"
+                    placeholder="https://steamcommunity.com/..."
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-button"
+            >
+                Подати заявку
+            </button>
+
+
+            <div>
+                id="success"
+                class="success"
+            >
+                ✅ Заявку успішно створено!
+                Очікуй підтвердження від адміністрації V1ME Community.
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <a
+        href="index.html"
+        class="back"
+    >
+        ← Повернутися на головну
+    </a>
+
+</div>
+
+
+<script>
+
+    document
+        .getElementById("registerForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            document
+                .getElementById("success")
+                .style.display = "block";
+
+            document
+                .getElementById("registerForm")
+                .reset();
+
+        });
+
+</script>
+
+
+</body>
+</html>
+

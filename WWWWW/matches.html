@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Матчі — V1ME Community</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #0b0b10;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .matches-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .page-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-description {
+            color: #888;
+            margin-bottom: 40px;
+        }
+
+        .matches {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .match-card {
+            background: #15151d;
+            border: 1px solid #292936;
+            border-radius: 14px;
+            padding: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: 0.2s;
+        }
+
+        .match-card:hover {
+            border-color: #8b5cf6;
+            transform: translateY(-2px);
+        }
+
+        .teams {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .score {
+            color: #a855f7;
+            font-size: 26px;
+            font-weight: 900;
+        }
+
+        .map {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        .status {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .live {
+            color: #22c55e;
+        }
+
+        .finished {
+            color: #777;
+        }
+
+        .upcoming {
+            color: #f59e0b;
+        }
+
+        .tournament-name {
+            color: #888;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 700px) {
+
+            .page-title {
+                font-size: 32px;
+            }
+
+            .match-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .teams {
+                gap: 12px;
+                font-size: 15px;
+            }
+
+            .score {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="matches-container">
+
+        <h1 class="page-title">Матчі</h1>
+
+        <p class="page-description">
+            Останні, поточні та майбутні матчі V1ME Community
+        </p>
+
+
+        <div class="matches">
+
+
+            <!-- MATCH 1 -->
+            <div class="match-card">
+
+                <div class="teams">
+                    <span>SavageHawks</span>
+
+                    <span class="score">
+                        13 : 8
+                    </span>
+
+                    <span>Blaze Purple</span>
+                </div>
+
+                <div>
+                    <div class="map">
+                        Mirage
+                    </div>
+
+                    <div class="status finished">
+                        ● Завершено
+                    </div>
+
+                    <div class="tournament-name">
+                        V1ME CUP #1
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- MATCH 2 -->
+            <div class="match-card">
+
+                <div class="teams">
+                    <span>Nexus</span>
+
+                    <span class="score">
+                        7 : 6
+                    </span>
+
+                    <span>Blaze</span>
+                </div>
+
+                <div>
+                    <div class="map">
+                        Inferno
+                    </div>
+
+                    <div class="status live">
+                        ● LIVE
+                    </div>
+
+                    <div class="tournament-name">
+                        V1ME CUP #1
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- MATCH 3 -->
+            <div class="match-card">
+
+                <div class="teams">
+                    <span>PARADOX</span>
+
+                    <span class="score">
+                        13 : 5
+                    </span>
+
+                    <span>Natus Junior</span>
+                </div>
+
+                <div>
+                    <div class="map">
+                        Inferno
+                    </div>
+
+                    <div class="status finished">
+                        ● Завершено
+                    </div>
+
+                    <div class="tournament-name">
+                        V1ME CUP #1
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- MATCH 4 -->
+            <div class="match-card">
+
+                <div class="teams">
+                    <span>Kairo Team</span>
+
+                    <span class="score">
+                        6 : 13
+                    </span>
+
+                    <span>Blaze</span>
+                </div>
+
+                <div>
+                    <div class="map">
+                        Nuke
+                    </div>
+
+                    <div class="status finished">
+                        ● Завершено
+                    </div>
+
+                    <div class="tournament-name">
+                        V1ME CUP #1
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- MATCH 5 -->
+            <div class="match-card">
+
+                <div class="teams">
+                    <span>SavageHawks</span>
+
+                    <span class="score">
+                        13 : 11
+                    </span>
+
+                    <span>PARADOX</span>
+                </div>
+
+                <div>
+                    <div class="map">
+                        Mirage
+                    </div>
+
+                    <div class="status finished">
+                        ● Завершено
+                    </div>
+
+                    <div class="tournament-name">
+                        V1ME CUP #1 — Semifinal
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MATCH 6 -->
+            <div class="match-card">
+
+                <div class="teams">
+                    <span>SavageHawks</span>
+
+                    <span class="score">
+                        VS
+                    </span>
+
+                    <span>TBD</span>
+                </div>
+
+                <div>
+
+                    <div class="map">
+                        19:00
+                    </div>
+
+                    <div class="status upcoming">
+                        ● Скоро
+                    </div>
+
+                    <div class="tournament-name">
+                        V1ME CUP #1 — Final
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
