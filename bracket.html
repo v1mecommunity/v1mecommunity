@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Сітка — V1ME Community</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #0b0b10;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .bracket-page {
+            max-width: 1400px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #888;
+            margin-bottom: 45px;
+        }
+
+        .bracket {
+            display: flex;
+            gap: 70px;
+            overflow-x: auto;
+            padding: 20px;
+        }
+
+        .round {
+            min-width: 230px;
+        }
+
+        .round-title {
+            color: #a855f7;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .round-matches {
+            display: flex;
+            flex-direction: column;
+            gap: 55px;
+        }
+
+        .match-box {
+            background: #15151d;
+            border: 1px solid #292936;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .team-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 13px 15px;
+            border-bottom: 1px solid #292936;
+        }
+
+        .team-row:last-child {
+            border-bottom: none;
+        }
+
+        .winner {
+            color: #a855f7;
+            font-weight: 800;
+        }
+
+        .score {
+            font-weight: 800;
+        }
+
+        .final {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 20px rgba(139,92,246,0.15);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="bracket-page">
+
+    <h1 class="title">Турнірна сітка</h1>
+
+    <p class="subtitle">
+        V1ME CUP #1 — Single Elimination
+    </p>
+
+    <div class="bracket">
+
+        <!-- ЧВЕРТЬФІНАЛ -->
+        <div class="round">
+
+            <div class="round-title">
+                Чвертьфінал
+            </div>
+
+            <div class="round-matches">
+
+                <div class="match-box">
+                    <div class="team-row winner">
+                        SavageHawks
+                        <span class="score">13</span>
+                    </div>
+
+                    <div class="team-row">
+                        Blaze Purple
+                        <span class="score">8</span>
+                    </div>
+                </div>
+
+
+                <div class="match-box">
+                    <div class="team-row winner">
+                        PARADOX
+                        <span class="score">13</span>
+                    </div>
+
+                    <div class="team-row">
+                        Natus Junior
+                        <span class="score">5</span>
+                    </div>
+                </div>
+
+
+                <div class="match-box">
+                    <div class="team-row winner">
+                        Nexus
+                        <span class="score">13</span>
+                    </div>
+
+                    <div class="team-row">
+                        Point No Return
+                        <span class="score">7</span>
+                    </div>
+                </div>
+
+
+                <div class="match-box">
+                    <div class="team-row">
+                        Kairo Team
+                        <span class="score">6</span>
+                    </div>
+
+                    <div class="team-row winner">
+                        Blaze
+                        <span class="score">13</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ПІВФІНАЛ -->
+        <div class="round">
+
+            <div class="round-title">
+                Півфінал
+            </div>
+
+            <div class="round-matches">
+
+                <div class="match-box">
+                    <div class="team-row winner">
+                        SavageHawks
+                        <span class="score">13</span>
+                    </div>
+
+                    <div class="team-row">
+                        PARADOX
+                        <span class="score">11</span>
+                    </div>
+                </div>
+
+
+                <div class="match-box">
+                    <div class="team-row">
+                        Nexus
+                        <span class="score">7</span>
+                    </div>
+
+                    <div class="team-row winner">
+                        Blaze
+                        <span class="score">13</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ФІНАЛ -->
+        <div class="round">
+
+            <div class="round-title">
+                Фінал
+            </div>
+
+            <div class="round-matches">
+
+                <div class="match-box final">
+
+                    <div class="team-row winner">
+                        SavageHawks
+                        <span class="score">—</span>
+                    </div>
+
+                    <div class="team-row">
+                        Blaze
+                        <span class="score">—</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

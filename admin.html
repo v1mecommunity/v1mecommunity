@@ -1,0 +1,129 @@
+```html
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V1ME Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="admin-container">
+
+        <!-- LOGIN -->
+
+        <div id="loginPanel" class="admin-login">
+
+            <h1>V1ME ADMIN</h1>
+            <p>Вхід до панелі адміністратора</p>
+
+            <form id="loginForm">
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Пароль"
+                    required
+                >
+
+                <button type="submit">
+                    Увійти
+                </button>
+
+            </form>
+
+            <p id="loginError" style="display:none;">
+                ❌ Неправильний email або пароль
+            </p>
+
+        </div>
+
+
+        <!-- ADMIN PANEL -->
+
+        <div id="adminPanel" style="display:none;">
+
+            <h1>V1ME ADMIN PANEL</h1>
+
+            <p>
+                Вітаю, адміністраторе 👋
+            </p>
+
+            <button id="logoutButton">
+                Вийти
+            </button>
+
+            <hr>
+
+            <div class="admin-menu">
+
+    <button id="tournamentsButton">
+        🏆 Турніри
+    </button>
+
+    <button id="matchesButton">
+        ⚔️ Матчі
+    </button>
+
+    <button id="teamsButton">
+        👥 Команди
+    </button>
+
+    <button id="applicationsButton">
+        📋 Заявки
+    </button>
+
+</div>
+
+        
+        
+<div id="adminContent">
+
+    <h2>🏆 Турніри</h2>
+
+    <button id="addTournamentButton">
+        + Додати турнір
+    </button>
+
+    <div id="tournamentsList"></div>
+
+</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
+```
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+    window.supabaseClient = window.supabase.createClient(
+        "https://rfgsmiprdmlpximyeaoy.supabase.co",
+        "sb_publishable_h9m8acjhlJEAETS7nJZU8g_8M29PNAS"
+    );
+
+    console.log("✅ Supabase підключено");
+</script>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
